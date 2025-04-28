@@ -1,0 +1,25 @@
+{
+  "name": "crud-nodejs-express-typeorm-postgresql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --transpile-only src/server.ts",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    "migration:generate": "yarn typeorm migration:generate ./src/database/migrations/CreateUsers -d ./src/database/data-source.ts",
+    "migration:run": "yarn typeorm migration:run",
+    "migration:revert": "yarn typeorm migration:revert"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.15.6",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.22"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
