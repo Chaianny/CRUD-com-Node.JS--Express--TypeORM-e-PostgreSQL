@@ -27,10 +27,10 @@ export class CreateCategories1745874545414 implements MigrationInterface {
                         name:"created_at",
                         type:"timestamp",
                         default: "now()"
-                    }
-                ]
+                    },
+                ],
             })
-        )
+        );
     }
 
     /* quando eu quiser reverter a migration que eu fiz, caso faça merda, consigo reverter sa merda, mas nao esta rodando o comando  */
