@@ -10,7 +10,7 @@ export class Category {
     name: string = "";
 
     @Column()
-    descrition: string = ""; 
+    description: string = ""; 
 
     @CreateDateColumn()
     created_at!: Date;
