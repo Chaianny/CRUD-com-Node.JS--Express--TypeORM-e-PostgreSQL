@@ -11,7 +11,6 @@ export const AppDataSource = new DataSource({
     database: "code_drops_crud",
     synchronize: false,
     logging: true,
-
     entities: ["src/entities/*.ts"],
-    migrations: ["src/database/migrations/*.ts"],
+    migrations: ["src/migrations/*.ts"] 
 });
