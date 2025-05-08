@@ -1,23 +1,29 @@
 import { Entity, Column, CreateDateColumn, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 
-@Entity("categories")
-export class Category {
-    @PrimaryColumn()
-    id!: string; 
+@Entity("videos")
+export class Video {
+  @PrimaryColumn()
+  id!: string;
 
-    @Column()
-    name: string = "";
+  @Column()
+  name: string = "";
 
-    @Column()
-    descrition: string = ""; 
+  @Column()
+  description: string = "";
 
-    @CreateDateColumn()
-    created_at!: Date;
+  @Column()
+  duration: string = "";
 
-    constructor() {
-        if (!this.id) {
-            this.id = uuid();
-        }
+  @Column()
+  category_id: string = "";
+
+  @CreateDateColumn()
+  created_at!: string;
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
     }
+  }
 }

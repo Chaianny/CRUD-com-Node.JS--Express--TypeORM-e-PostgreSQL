@@ -1,0 +1,30 @@
+import { getRepository } from "typeorm";
+import { Video } from "../entities/Video"
+import { Category } from "../entities/Category";
+
+type VideoRequest = {
+    name: string;
+    description: string;
+    duration: string;
+    category_id: string;
+}
+
+
+export class CreateVideoService {
+    async execute({name, description, duration, category_id}: VideoRequest): Promise<Error | Video> {
+        const repo = getRepository(Video);
+        const repoCategory = getRepository(Category);
+
+            if(!(await repoCategory.findOne({ where:{id: category_id}}))){
+            return new Error("Category does not exist!")
+        }
+
+
+        const video = repo.create({name, description, duration, category_id});
+
+        await repo.save(video);
+
+        return video;
+
+    }
+}

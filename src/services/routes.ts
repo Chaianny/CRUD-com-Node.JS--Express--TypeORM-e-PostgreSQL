@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CreateCategoryService } from "../services/CreateCategoryService";
+import router from "./category.routes";
 
 export class CreateCategoryController {
     async handle(req: Request, res: Response): Promise<Response> {
@@ -14,5 +15,14 @@ export class CreateCategoryController {
         }
 
         return res.status(201).json(result);
+
     }
 }
+/**
+ C = CREATE - POST
+ R = READ - GET
+ U = UPDATE - PUT
+ D = DELETE - DELETE
+  */
+
+ /* AINDA NAO CRIEI AS ROTAS */
